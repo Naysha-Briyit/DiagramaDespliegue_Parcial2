@@ -1,0 +1,29 @@
+@startuml
+
+node Cliente{
+    component InterfazCliente 
+} 
+
+node "Docker"{
+    node NodeJs1{
+        [MicroServicio\nLista de Cursos]
+    } 
+
+    node NodeJs2{
+        [MicroServicio\nAgrega y Lista \nde Pagos]
+    } 
+
+    node NodeJs3{
+        [MicroServicio\nRegistra Matricula \nde un curso]
+    } 
+
+}
+
+
+Cliente --> NodeJs1
+Cliente --> NodeJs2
+Cliente --> NodeJs3
+[MicroServicio\nAgrega y Lista \nde Pagos] <.. [MicroServicio\nRegistra Matricula \nde un curso]
+
+
+@enduml
